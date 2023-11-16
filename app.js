@@ -5,7 +5,7 @@ const cors = require("cors")
 const fileUpload = require('express-fileupload')
 
 
-const PUERTO = process.env.PUERTO || 3000
+const PORT = process.env.PORT || 3000
 
 const app = express()
 
@@ -62,6 +62,6 @@ app.use("/api", RouterNotification);
 
 
 
-app.listen( PUERTO, ( )=>{
-    console.log(`ESCUCHANDO A EXPRESS EN EL PUERTO: ${PUERTO}`)
+app.listen( PORT, ( )=>{
+    console.log(`ESCUCHANDO A EXPRESS EN EL PUERTO: ${PORT}`)
 })
