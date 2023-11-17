@@ -75,7 +75,7 @@ const generar = async (req = request, res = response) => {
         ],
         back_urls: {
             success: 'http://localhost:3000/api/success/',
-            failure: 'http://localhost:3000/api/failure/'
+            failure: 'https://65569c8149504018b92bfc8e--starlit-cupcake-12ccb8.netlify.app/#/home/failure/'
         },
 
         
