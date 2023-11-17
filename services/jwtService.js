@@ -9,7 +9,7 @@ const token = async ( data )=>{
         id: data._id,       
         email: data.email,            
         iat: moment().unix(),
-        exp: moment().add(1 , "mounth").unix()
+        exp: moment().add(1 , "month").unix()
     }
 
 
