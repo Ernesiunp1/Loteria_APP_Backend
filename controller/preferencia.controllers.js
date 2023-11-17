@@ -62,6 +62,7 @@ const generar = async (req = request, res = response) => {
     // })
 
     // return
+    console.log(" antes del items");
     var preference = {
         items: [
             {            
@@ -86,6 +87,8 @@ const generar = async (req = request, res = response) => {
         // idPublicacion: body.producto.id
 
     }
+
+    console.log("despues de item");
 
 
     mercadopago.preferences
