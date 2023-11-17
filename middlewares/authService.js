@@ -41,7 +41,8 @@ const Auth = async ( req = request, res = response, next ) =>{
         console.log(error);
         res.status(403).json({
             status: "Error",
-            msg: "Unauthorized |token expired"
+            msg: "Unauthorized |token expired",
+            error: error
         })
     } 
 
