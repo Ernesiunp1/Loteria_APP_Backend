@@ -11,7 +11,7 @@ router.get('/publicaciones',  PublicacionCtrl.getPublicacion )
 router.get('/detalle/:id?',  PublicacionCtrl.getDetail )
 router.post('/publicacion/:titulo?', [Auth] ,PublicacionCtrl.createPublicacion)
 router.put('/update/:id', [Auth] , PublicacionCtrl.updatePubli)
-router.delete('/delete/:id', [Auth] ,PublicacionCtrl.removePubli)
+router.delete('/delete/:id' ,PublicacionCtrl.removePubli)
 
 
 
