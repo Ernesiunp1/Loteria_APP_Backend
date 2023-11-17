@@ -332,6 +332,14 @@ const comprarBoletasnew = async ( paymentId ,idAnuncion, cantBoletas, datosUsuar
           });
 
           
+          let datostransporter = {
+
+            from: process.env.EMAIL,
+            to: `${body.email}`,
+            text: ` ${body.boletas}, Hola como estas ${resultado.boletas}`
+
+          }
+
 
         const  enviandoMAil = await  transporter.sendMail({
             from: ` LOTERIA FOCUS ${process.env.EMAIL}`,
@@ -340,6 +348,8 @@ const comprarBoletasnew = async ( paymentId ,idAnuncion, cantBoletas, datosUsuar
             text: ` ${body.boletas}, Hola como estas ${resultado.boletas}`
         })
        
+        console.log( datostransporter, enviandoMAil );
+
         // todo: enviar correo electronico con las boletas compradas req.body.boletas
 
         
