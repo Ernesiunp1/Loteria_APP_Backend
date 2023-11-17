@@ -76,8 +76,8 @@ const generar = async (req = request, res = response) => {
             failure: 'http://localhost:3000/api/failure/'
         },
 
-        notification_url : `https://65569c8149504018b92bfc8e--starlit-cupcake-12ccb8.netlify.app/api/noti/${nombre}/${apellido}/${documento}/${email}/${telefono}/${productoId}/${cantidad}`,
-        // notification_url : `${NGROK_TOKEN}/api/noti/${nombre}/${apellido}/${documento}/${email}/${telefono}/${productoId}/${cantidad}`,
+        // notification_url : `https://65569c8149504018b92bfc8e--starlit-cupcake-12ccb8.netlify.app/api/noti/${nombre}/${apellido}/${documento}/${email}/${telefono}/${productoId}/${cantidad}`,
+        notification_url : `${NGROK_TOKEN}/api/noti/${nombre}/${apellido}/${documento}/${email}/${telefono}/${productoId}/${cantidad}`,
 
 
         // user_info: user_info
