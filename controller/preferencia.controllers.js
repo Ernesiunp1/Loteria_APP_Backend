@@ -15,7 +15,7 @@ const producto = {
   }
 
 mercadopago.configure({
-    access_token: TOKEN
+    access_token: "APP_USR-2293222123672832-111611-dbf5bf0061c6ddab1476ed98bb3f86b5-495972662"
 });
 
 
@@ -78,8 +78,10 @@ const generar = async (req = request, res = response) => {
             failure: 'http://localhost:3000/api/failure/'
         },
 
+        
         // notification_url : `https://65569c8149504018b92bfc8e--starlit-cupcake-12ccb8.netlify.app/api/noti/${nombre}/${apellido}/${documento}/${email}/${telefono}/${productoId}/${cantidad}`,
-        notification_url : `${NGROK_TOKEN}/api/noti/${nombre}/${apellido}/${documento}/${email}/${telefono}/${productoId}/${cantidad}`,
+        // notification_url : `${NGROK_TOKEN}/api/noti/${nombre}/${apellido}/${documento}/${email}/${telefono}/${productoId}/${cantidad}`,
+        notification_url : `https://sorteo-back-fc3ca139226a.herokuapp.com/api/noti/${nombre}/${apellido}/${documento}/${email}/${telefono}/${productoId}/${cantidad}`,
 
 
         // user_info: user_info
@@ -94,12 +96,13 @@ const generar = async (req = request, res = response) => {
     mercadopago.preferences
       .create(preference)
       .then((respuesta) => {
+        console.log("entrando a respuesta preferencia");
         console.log(respuesta.body.init_point);
         return res.json({status: 'success', url: respuesta.body.init_point})
         // res.send(`<a href ="${respuesta.body.init_point}">PAGAR</a>`);
       })
       .catch((error) => {
-        
+
         console.log(error.message);
       });
    
