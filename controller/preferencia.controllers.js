@@ -31,7 +31,7 @@ const generar = async (req = request, res = response) => {
     const producto = await req.body.producto
 
 
-    // console.log('esta es el usuarui en',usuario);
+    console.log('esta es el usuarui en',usuario);
     // console.log('producto', producto);
     // const user_info = {
     const  nombre = usuario.nombre
@@ -43,6 +43,7 @@ const generar = async (req = request, res = response) => {
     const cantidad = producto.cantidad
     
     // }
+    console.log("despues del objeto");
 
     // const user_info = "ernesto"
 
