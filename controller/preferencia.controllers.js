@@ -99,6 +99,7 @@ const generar = async (req = request, res = response) => {
         // res.send(`<a href ="${respuesta.body.init_point}">PAGAR</a>`);
       })
       .catch((error) => {
+        
         console.log(error.message);
       });
    
