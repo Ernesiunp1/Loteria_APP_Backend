@@ -326,7 +326,7 @@ const comprarBoletasnew = async ( paymentId ,idAnuncion, cantBoletas, datosUsuar
             port: 587,
             secure: false, // upgrade later with STARTTLS
             auth: {
-              user: process.env.EMAIL,
+              user:process.env.EMAIL,
               pass:process.env.EMAIL_PASSWORD,
             },
           });
