@@ -74,8 +74,8 @@ const generar = async (req = request, res = response) => {
               } 
         ],
         back_urls: {
-            success: 'https://65569c8149504018b92bfc8e--starlit-cupcake-12ccb8.netlify.app/#/home',
-            failure: 'https://65569c8149504018b92bfc8e--starlit-cupcake-12ccb8.netlify.app/#/home'
+            success: 'https://65580d323b89140088e54622--tourmaline-faun-f40373.netlify.app/#/home',
+            failure: 'https://65580d323b89140088e54622--tourmaline-faun-f40373.netlify.app/#/home'
         },
 
         
