@@ -25,6 +25,11 @@ const publicacionSchema = Schema({
     required: true
   },
 
+  minimoCant: {
+    type: Number,
+    default: 6
+  },
+
   img: {
     type: [
       {

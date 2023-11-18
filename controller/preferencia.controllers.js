@@ -15,7 +15,7 @@ const producto = {
   }
 
 mercadopago.configure({
-    access_token:"APP_USR-2293222123672832-111611-dbf5bf0061c6ddab1476ed98bb3f86b5-495972662"
+    access_token:"APP_USR-2487199746571596-071015-20268f5a71e8d5f10d45b99e7d46d3cb-1417896816"
 });
 
 
@@ -69,7 +69,7 @@ const generar = async (req = request, res = response) => {
                 id: body.producto.id,
                 title: body.titulo,
                 quantity: body.cantidad,
-                currency_id: "COP",
+                currency_id: "ARS",
                 unit_price: body.producto.precio,
               } 
         ],
@@ -82,10 +82,10 @@ const generar = async (req = request, res = response) => {
         // notification_url : `https://65569c8149504018b92bfc8e--starlit-cupcake-12ccb8.netlify.app/api/noti/${nombre}/${apellido}/${documento}/${email}/${telefono}/${productoId}/${cantidad}`,
         
       //  tunel local
-        // notification_url : `https://6647-2800-e2-1f80-25be-8094-e0ff-39e6-5f4.ngrok-free.app/api/noti/${nombre}/${apellido}/${documento}/${email}/${telefono}/${productoId}/${cantidad}`,
+        notification_url : `https://6647-2800-e2-1f80-25be-8094-e0ff-39e6-5f4.ngrok-free.app/api/noti/${nombre}/${apellido}/${documento}/${email}/${telefono}/${productoId}/${cantidad}`,
 
       //  produccion funcionando
-        notification_url : `https://sorteo-back-fc3ca139226a.herokuapp.com/api/noti/${nombre}/${apellido}/${documento}/${email}/${telefono}/${productoId}/${cantidad}`,
+        // notification_url : `https://sorteo-back-fc3ca139226a.herokuapp.com/api/noti/${nombre}/${apellido}/${documento}/${email}/${telefono}/${productoId}/${cantidad}`,
 
 
         // user_info: user_info

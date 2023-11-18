@@ -332,23 +332,39 @@ const comprarBoletasnew = async ( paymentId ,idAnuncion, cantBoletas, datosUsuar
           });
 
           
-          let datostransporter = {
+        //   let datostransporter = {
 
-            from: process.env.EMAIL,
-            to: `${body.email}`,
-            text: ` ${body.boletas}, Hola como estas ${resultado.boletas}`
+        //     from: process.env.EMAIL,
+        //     to: `${body.email}`,
+        //     text: ` Muchas gracias por tu compra, te deseamos mucha suerte. 
+        //      te recordamos que para reclamar tu premio debes tener el número
+        //       de factura que te envio mercado pago a tu correo junto con el 
+        //       número de la entrada que compraste. 
+              
+        //       Tus entradas son las siguientes: ${body.titulo} :  ${body.boletas}
+              
+        //       Número de contacto whatsapp: 312-747-21-60`
 
-          }
+              
+
+        //   }
 
 
         const  enviandoMAil = await  transporter.sendMail({
-            from: ` LOTERIA FOCUS ${process.env.EMAIL}`,
+            from: ` DS EVENTOS ${process.env.EMAIL}`,
             to: `${body.email}`,
-            subject: 'ENTRADAS DE LA LOTERIA',
-            text: ` ${body.boletas}, Hola como estas ${resultado.boletas}`
+            subject: 'ENTRADAS DE SORTEO (DS EVENTOS)',
+            text: `Muchas gracias por tu compra, te deseamos mucha suerte. 
+            te recordamos que para reclamar tu premio debes tener el número
+             de factura que te envio mercado pago a tu correo junto con el 
+             número de la entrada que compraste. 
+             
+             Tus entradas son las siguientes: ${body.titulo} :  ${body.boletas}
+             
+             Número de contacto whatsapp: 312-747-21-60`
         })
        
-        console.log( datostransporter, enviandoMAil );
+        // console.log( datostransporter, enviandoMAil );
 
         // todo: enviar correo electronico con las boletas compradas req.body.boletas
 

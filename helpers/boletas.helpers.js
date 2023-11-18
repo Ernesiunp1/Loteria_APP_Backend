@@ -28,7 +28,7 @@ async function generarBoletas(cantidad, idPublicacion) {
 
   //  Delimita la cantidad de boletas maximas en la base de datos
     // todo : igualar a 9999 al finalizar las pruebas 
-  if (boletasExistentes.length >= 20) {
+  if (boletasExistentes.length >= 9998) {
     throw new Error("No Hay mas Boletas para vender");
   }
 
@@ -41,7 +41,7 @@ async function generarBoletas(cantidad, idPublicacion) {
     let numeroAleatorio;
     do {
         // todo: Cambiar el numero al maximo de boletas a vender 
-      numeroAleatorio = Math.floor(Math.random() * 20) + 1;
+      numeroAleatorio = Math.floor(Math.random() * 9998) + 1;
     } while (
       boletasExistentes.includes(numeroAleatorio) ||
       boletas.includes(numeroAleatorio)
@@ -60,7 +60,4 @@ async function generarBoletas(cantidad, idPublicacion) {
 
 
   
- 
-
-
 module.exports = generarBoletas

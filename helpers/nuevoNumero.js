@@ -2,7 +2,7 @@
 
 function numero(){
 
-    const nuevoNumero = Math.floor(Math.random() * 20);
+    const nuevoNumero = Math.floor(Math.random() * 9998);
 
     console.log('creando Nuevo nuemero');
 
