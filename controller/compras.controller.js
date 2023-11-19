@@ -359,7 +359,7 @@ const comprarBoletasnew = async ( paymentId ,idAnuncion, cantBoletas, datosUsuar
              de factura que te envio mercado pago a tu correo junto con el 
              número de la entrada que compraste. 
              
-             Tus entradas son las siguientes: ${body.titulo} :  ${body.boletas}
+             Tus entradas son las siguientes:  ${body.boletas}
              
              Número de contacto whatsapp: 312-747-21-60`
         })
