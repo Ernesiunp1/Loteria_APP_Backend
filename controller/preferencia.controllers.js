@@ -15,7 +15,7 @@ const producto = {
   }
 
 mercadopago.configure({
-    access_token:"APP_USR-2487199746571596-071015-20268f5a71e8d5f10d45b99e7d46d3cb-1417896816"
+    access_token:"APP_USR-2293222123672832-111611-dbf5bf0061c6ddab1476ed98bb3f86b5-495972662"
 });
 
 
