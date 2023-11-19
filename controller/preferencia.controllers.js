@@ -69,7 +69,7 @@ const generar = async (req = request, res = response) => {
                 id: body.producto.id,
                 title: body.titulo,
                 quantity: body.cantidad,
-                currency_id: "ARS",
+                currency_id: "COP",
                 unit_price: body.producto.precio,
               } 
         ],
