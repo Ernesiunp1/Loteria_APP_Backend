@@ -11,13 +11,16 @@ const PORT = process.env.PORT || 3000
 
 const app = express()
 
-app.use(cors())
+app.options('*', cors()); // Habilita CORS para todas las solicitudes OPTIONS
+
+// app.use(cors())
+
 
 
 app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', ['*', "https://sorteo-app-f6bb865852e1.herokuapp.com/"]);
-    res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
-    res.header('Access-Control-Allow-Headers', 'Content-Type');
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Methods', "*");
+    res.header('Access-Control-Allow-Headers', "*");
     next();
   });
 
