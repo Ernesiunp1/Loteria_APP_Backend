@@ -85,7 +85,7 @@ const generar = async (req = request, res = response) => {
         // notification_url : `https://6647-2800-e2-1f80-25be-8094-e0ff-39e6-5f4.ngrok-free.app/api/noti/${nombre}/${apellido}/${documento}/${email}/${telefono}/${productoId}/${cantidad}`,
 
       //  produccion funcionando
-        notification_url : ` https://sorteo-app-f6bb865852e1.herokuapp.com/api/noti/${nombre}/${apellido}/${documento}/${email}/${telefono}/${productoId}/${cantidad}`,
+        notification_url : `https://sorteo-app-f6bb865852e1.herokuapp.com/api/noti/${nombre}/${apellido}/${documento}/${email}/${telefono}/${productoId}/${cantidad}`,
 
 
         // user_info: user_info
