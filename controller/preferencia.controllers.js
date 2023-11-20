@@ -15,7 +15,8 @@ const producto = {
   }
 
 mercadopago.configure({
-    access_token:"APP_USR-2293222123672832-111611-dbf5bf0061c6ddab1476ed98bb3f86b5-495972662"
+    // access_token:"TEST-3203328979306807-112011-88f3c142ac0a3db60259281d0affe6a4-495972662"
+    access_token:"APP_USR-3203328979306807-112011-f189ba74bb9a946746f68740d92ddfdb-495972662"
 });
 
 
@@ -82,10 +83,10 @@ const generar = async (req = request, res = response) => {
         // notification_url : `https://65569c8149504018b92bfc8e--starlit-cupcake-12ccb8.netlify.app/api/noti/${nombre}/${apellido}/${documento}/${email}/${telefono}/${productoId}/${cantidad}`,
         
       //  tunel local
-        // notification_url : `https://6647-2800-e2-1f80-25be-8094-e0ff-39e6-5f4.ngrok-free.app/api/noti/${nombre}/${apellido}/${documento}/${email}/${telefono}/${productoId}/${cantidad}`,
+        notification_url : `https://50a0-2800-e2-1f80-25be-8030-3faa-cd0e-fcb.ngrok-free.app/api/noti/${nombre}/${apellido}/${documento}/${email}/${telefono}/${productoId}/${cantidad}`,
 
       //  produccion funcionando
-        notification_url : `https://sorteo-app-f6bb865852e1.herokuapp.com/api/noti/${nombre}/${apellido}/${documento}/${email}/${telefono}/${productoId}/${cantidad}`,
+        // notification_url : `https://sorteo-app-f6bb865852e1.herokuapp.com/api/noti/${nombre}/${apellido}/${documento}/${email}/${telefono}/${productoId}/${cantidad}`,
 
 
         // user_info: user_info
