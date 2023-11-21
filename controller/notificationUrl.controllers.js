@@ -65,6 +65,7 @@ const notificacion = async (req = request, res = response) => {
 
         }   
         
+        
         // console.log('ESTE ES EL DATA.BODY.STATUS',data.body.status);
         // console.log('ESTE ES EL DATA.BODY.STATUS',payment['data.id']);
         // console.log('ESTE ES EL DATA.BODY.STATUS',data.body.payer.id);
