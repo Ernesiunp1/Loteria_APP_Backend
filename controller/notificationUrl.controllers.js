@@ -53,6 +53,9 @@ const notificacion = async (req = request, res = response) => {
           
           console.log('este es el resultado de comprarBoletas', comprandoBoletas);
 
+          console.log();
+          res.send()
+
           return res.status(200).json({
             status: 'success',
             message: "Notificación recibida correctamente.",
