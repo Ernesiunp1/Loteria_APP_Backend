@@ -1,7 +1,7 @@
 const express = require('express')
 const Compra = require('../models/compras.model')
 const Boletas = require('../helpers/boletas.helpers')
-const { generar } = require('../controller/preferencia.controllers')
+// const { generar } = require('../controller/preferencia.controllers')
 // const { transporter } = require('../helpers/mail.helper')
 const nodemailer = require("nodemailer")
 
@@ -15,13 +15,18 @@ const compraPrueba = async (req, res) => {
 
 
 const comprar = async (req, res) => {
+
+    console.log("ENTRANDO A COMPRAR EN BACKEND");
+    console.log(req.body);
     
-    const idAnuncio = req.params.id
-    const cantidadBoletas = req.params.cant
+
+    
+    
+    const idAnuncio = req.body.producto.id
+    const cantidadBoletas = req.body.producto.cantidad
     const body = req.body
 
     const requisitos = ["nombre", "apellidos", "documento", "telefono", "email"]
-
 
     if (!idAnuncio) {
         return res.status(400).json({
@@ -30,7 +35,7 @@ const comprar = async (req, res) => {
         })
     }                    
 
-    const faltanDatos = requisitos.some(prop => !body.hasOwnProperty(prop));
+    const faltanDatos = requisitos.some(prop => !body.usuario.hasOwnProperty(prop));
 
     if (faltanDatos) {
 
@@ -41,7 +46,7 @@ const comprar = async (req, res) => {
 
     }
 
-    req.body.idPublicacion = idAnuncio
+    req.body.usuario.idPublicacion = idAnuncio
 
     try {
 
@@ -49,10 +54,8 @@ const comprar = async (req, res) => {
         // se les pasa la cantidad y el id de la publicacion
         const nuevasBoletas = await Boletas( cantidadBoletas , body.idPublicacion)     
 
-
         // Se guardan las Boletas en el body para poder guardar en la base de datos
-        req.body.boletas = nuevasBoletas
-        
+        req.body.usuario.boletas = nuevasBoletas        
 
         // todo: generar cobro de las boletas antes de guardar en base de datos
 
@@ -61,15 +64,48 @@ const comprar = async (req, res) => {
         console.log('este es el resultado de MP desde compraControlloer');
 
         // se pasa el formulario con boletas en el objeto body
-        const newCompra = Compra(body)
-        await newCompra.save()
+        const newCompra = Compra(body.usuario)
+        const resultado = await newCompra.save()
 
 
         // todo: enviar correo electronico con las boletas compradas req.body.boletas
 
         
+     
+        const transporter = nodemailer.createTransport({
+            host: "smtp.office365.com",
+            port: 587,
+            secure: false, // upgrade later with STARTTLS
+            auth: {
+              user:"vivas.ernesto@outlook.com",
+              pass:"Libertad2013,",
+            },
+          });
+
+        
+
+          const  enviandoMAil = await  transporter.sendMail({
+            from: `vivas.ernesto@outlook.com  DS EVENTOS `,            
+            to: `${body.usuario.email}`,
+            subject: 'ENTRADAS DE SORTEO (DS EVENTOS)',
+            text: `Muchas gracias por tu compra, te deseamos mucha suerte. 
+            te recordamos que para reclamar tu premio debes tener el número
+             de factura que te envio mercado pago a tu correo junto con el 
+             número de la entrada que compraste.              
+             
+             Tus entradas son las siguientes: 
+                          
+             ${req.body.usuario.boletas}              
+             
+             Número de contacto whatsapp: 312-747-21-60`
+        })
+
+
+          
         return res.status(200).json({
-            newCompra
+            newCompra,
+            resultado,
+            enviandoMAil
         });
 
 

@@ -56,7 +56,7 @@ const ComprasSchema = Schema({
 
     paymentID: {
         type: Number,
-        required: true
+        default: 1234
     },
     telefono: {
         type: Number,
