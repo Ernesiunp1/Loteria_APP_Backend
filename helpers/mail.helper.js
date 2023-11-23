@@ -88,9 +88,9 @@ const sendMail = (payload) =>{
             });
 
             const mailOptions = {
-                from: "PAGINA DE SORTEO <vivas.ernesto@gmail.com>",
-                to:"vivas.ernesto@gmail.com",
-                subject:"node Mailer Prueba",
+                from: "DS EVENTOS <vivas.ernesto@gmail.com>",
+                to:`${email}`,
+                subject:"DS Eventos",
                 html:`
     <h1> Tus Boletas han sido reservadas exitosamente</h1>
     <h1> Debes pagar Inmediatamente y confirmar el pago</h1>
