@@ -92,14 +92,15 @@ const sendMail = (payload) =>{
                 to:"vivas.ernesto@gmail.com",
                 subject:"node Mailer Prueba",
                 html:`
-    <h1> Formulario</h1>
-    <ul>
-        <li> name: ${name}       </li>
-        <li> email: ${email}     </li>
-        <li> celular: ${phone}   </li>
-        
-        
-    </ul>
+    <h1> Tus Boletas han sido reservadas exitosamente</h1>
+    <h1> Debes pagar Inmediatamente y confirmar el pago</h1>
+        <ul>
+            <li> name: ${name}       </li>
+            <li> email: ${email}     </li>
+            <li> celular: ${phone}   </li>
+            
+            
+        </ul>
 
     <h1> Medios de pago</h1>
 
