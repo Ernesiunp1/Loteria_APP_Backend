@@ -46,7 +46,7 @@ app.use(fileUpload({
 
 // ruta de prueba 
 
-app.use('/generar', (req , res ) => {
+app.use('/api/generar', (req , res ) => {
 
     const {request, params, body} = req
 

@@ -19,8 +19,6 @@ const comprar = async (req, res) => {
     console.log("ENTRANDO A COMPRAR EN BACKEND");
     console.log(req.body);
     
-
-    
     
     const idAnuncio = req.body.producto.id
     const cantidadBoletas = req.body.producto.cantidad
@@ -77,16 +75,16 @@ const comprar = async (req, res) => {
             port: 587,
             secure: false, // upgrade later with STARTTLS
             auth: {
-              user:"vivas.ernesto@outlook.com",
-              pass:"Libertad2013,",
+                user:"vivas.ernesto@outlook.com",
+                pass:"Libertad2013,",
             },
           });
 
         
 
           const  enviandoMAil = await  transporter.sendMail({
-            from: `vivas.ernesto@outlook.com  DS EVENTOS `,            
-            to: `${body.usuario.email}`,
+            from:`vivas.ernesto@outlook.com  DS EVENTOS `,            
+            to:`${body.usuario.email}`,
             subject: 'ENTRADAS DE SORTEO (DS EVENTOS)',
             text: `Muchas gracias por tu compra, te deseamos mucha suerte. 
             te recordamos que para reclamar tu premio debes tener el número
