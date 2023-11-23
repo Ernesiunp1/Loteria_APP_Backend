@@ -72,10 +72,10 @@ const comprar = async (req, res) => {
 
         const payload = {
             name: newCompra.nombre,
-            email: "vivas.ernesto@gmail.com",
+            email: newCompra.email,
             publicacionId: newCompra.idPublicacion,
             boletas: newCompra.boletas,
-            phone: 3127472160,
+            phone: newCompra.telefono,
             message: " Muchas Gracias por tu compra, en este correo podras encontrar los numeros reservados de tus boletas, para poder activarlas realiza y confirma tu pago  cargando la imagen de tu consignacion o transferencia en este link XXXXXXXXXXXX o al whatsapp XXXXXXXX"
         }
 
