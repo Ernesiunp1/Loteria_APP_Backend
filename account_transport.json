@@ -1,0 +1,10 @@
+{
+    "service":"gmail",
+    "auth": {
+        "type":"OAuth2",
+        "user":"vivas.ernesto@gmail.com",
+        "clientId":"533437542492-cec47jqpe9fieeb4qi1h2blha665i4q4.apps.googleusercontent.com",
+        "clientSecret":"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",
+        "refreshToken":"ny1nehwf8ACLk4tnbTPGMpKhxQ0GDG5YWpU7aUMsy3iM8Q"
+    }
+}

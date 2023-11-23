@@ -1,9 +1,9 @@
 const express = require('express')
 const Compra = require('../models/compras.model')
 const Boletas = require('../helpers/boletas.helpers')
-// const { generar } = require('../controller/preferencia.controllers')
-// const { transporter } = require('../helpers/mail.helper')
-const nodemailer = require("nodemailer")
+
+const  sendMail  = require('../helpers/mail.helper')
+
 
 
 
@@ -68,42 +68,23 @@ const comprar = async (req, res) => {
 
         // todo: enviar correo electronico con las boletas compradas req.body.boletas
 
-        
-     
-        const transporter = nodemailer.createTransport({
-            host: "smtp.office365.com",
-            port: 587,
-            secure: false, // upgrade later with STARTTLS
-            auth: {
-                user:"vivas.ernesto@outlook.com",
-                pass:"Libertad2013,",
-            },
-          });
+        // boletas, name, email, phone, message,
 
-        
+        const payload = {
+            name: newCompra.nombre,
+            email: "vivas.ernesto@gmail.com",
+            publicacionId: newCompra.idPublicacion,
+            boletas: newCompra.boletas,
+            phone: 3127472160,
+            message: " Muchas Gracias por tu compra, en este correo podras encontrar los numeros reservados de tus boletas, para poder activarlas realiza y confirma tu pago  cargando la imagen de tu consignacion o transferencia en este link XXXXXXXXXXXX o al whatsapp XXXXXXXX"
+        }
 
-          const  enviandoMAil = await  transporter.sendMail({
-            from:`vivas.ernesto@outlook.com  DS EVENTOS `,            
-            to:`${body.usuario.email}`,
-            subject: 'ENTRADAS DE SORTEO (DS EVENTOS)',
-            text: `Muchas gracias por tu compra, te deseamos mucha suerte. 
-            te recordamos que para reclamar tu premio debes tener el número
-             de factura que te envio mercado pago a tu correo junto con el 
-             número de la entrada que compraste.              
-             
-             Tus entradas son las siguientes: 
-                          
-             ${req.body.usuario.boletas}              
-             
-             Número de contacto whatsapp: 312-747-21-60`
-        })
-
-
+        sendMail(payload)
           
         return res.status(200).json({
             newCompra,
             resultado,
-            enviandoMAil
+            // enviandoMAil
         });
 
 
