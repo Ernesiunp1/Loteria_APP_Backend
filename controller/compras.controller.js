@@ -76,7 +76,8 @@ const comprar = async (req, res) => {
             publicacionId: newCompra.idPublicacion,
             boletas: newCompra.boletas,
             phone: newCompra.telefono,
-            message: " Muchas Gracias por tu compra, en este correo podras encontrar los numeros reservados de tus boletas, para poder activarlas realiza y confirma tu pago  cargando la imagen de tu consignacion o transferencia en este link XXXXXXXXXXXX o al whatsapp XXXXXXXX"
+            total: body.total,
+            message: " Muchas Gracias por tu compra, te deseamos mucha suerte. Recuerda que debes confirmar tu pago y en después de hacerlo estaras listo para ganar, de no hacerlo tus boletas seran eliminadas"
         }
 
         sendMail(payload)

@@ -7,7 +7,7 @@ const {google} = require('googleapis');
 
 const sendMail = (payload) =>{
 
-    const { boletas, name, email, phone, message,} =  payload
+    const { boletas, name, email, phone, message, total} =  payload
 
 
     function createTable(boletas) {
@@ -92,8 +92,11 @@ const sendMail = (payload) =>{
                 to:`${email}`,
                 subject:"DS Eventos",
                 html:`
-    <h1> Tus Boletas han sido reservadas exitosamente</h1>
-    <h1> Debes pagar Inmediatamente y confirmar el pago</h1>
+    <h1> Tus Boletas han sido reservadas con éxito</h1>
+    <h1> Debes pagar Inmediatamente y confirmar el pago.</h1>
+    
+    
+    <h3> Estos son tus datos: </h3> 
         <ul>
             <li> name: ${name}       </li>
             <li> email: ${email}     </li>
@@ -102,17 +105,23 @@ const sendMail = (payload) =>{
             
         </ul>
 
-    <h1> Medios de pago</h1>
+    <h1>1.- Total a pagar : ${total}  </h1>
 
-    <ul>
-        <li> PSE: duvan172126@hotmail.com  </li>
-        <li> NEQUI: 3127472160    </li>        
+    <h1>2.- Copia la cuenta Nequi aqui: <link> 312-747-2160 </link>   </h1>
     
-    </ul>
+    <h1>3.- Entra a  Nequi aquí:</h1>
+
+      <link>https://transacciones.nequi.com/bdigital/login.jsp</link> 
+
+    <h1>4.- Envía tu foto del pago aquí: </h1>
+
+     https://wa.me/573127472160/?text=Agrega%20la%20imagen%20de%20tu%20pago%20aqui%20en%20unos%20momentos%20confirmaremos%20el%20mismo
+
+
 
     <h1>Contacto Whatsapp</h1>
 
-        <li> 312-747-2160 </li>
+        <li><link> 312-747-2160</link> </li>
 
         <p> mensaje: ${message} <p>
 
