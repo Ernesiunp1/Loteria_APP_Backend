@@ -2,7 +2,7 @@ const express = require('express');
 const nodemailer = require('nodemailer');
 const {google} = require('googleapis');
 
-
+  
 
 
 const sendMail = (payload) =>{
@@ -63,10 +63,19 @@ const sendMail = (payload) =>{
         
     `
 
-    const CLIENT_ID ="719889471463-aqjtjd784ovnrrst73oe1oo95har6f21.apps.googleusercontent.com"
-    const CLIENT_SERCRET="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"
+    // const CLIENT_ID ="719889471463-aqjtjd784ovnrrst73oe1oo95har6f21.apps.googleusercontent.com"
+    // const CLIENT_SERCRET="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"
+    // const REDIRECT_URL ="https://developers.google.com/oauthplayground"   
+    // const REFRESH_TOKEN="1//04qg61yp1rpvbCgYIARAAGAQSNwF-L9Iro3QQx_aIzf57QuVJTn_PZFWGLDDq7Cht0RCj-i4LPfNSXvmVpI2PjBbS9DHdg44smDM"
+   
+    const CLIENT_ID ="533437542492-cec47jqpe9fieeb4qi1h2blha665i4q4.apps.googleusercontent.com"
+    const CLIENT_SERCRET="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"
     const REDIRECT_URL ="https://developers.google.com/oauthplayground"   
-    const REFRESH_TOKEN="1//04qg61yp1rpvbCgYIARAAGAQSNwF-L9Iro3QQx_aIzf57QuVJTn_PZFWGLDDq7Cht0RCj-i4LPfNSXvmVpI2PjBbS9DHdg44smDM"
+    const REFRESH_TOKEN="1//04sdoP6aKsutxCgYIARAAGAQSNwF-L9IrEctwuu1XFmG42qwP2d672zgWFvwVAfGr1M5317Zv1eSZwUYxwegNiZy8BI3OBH661ys"
+    
+     
+    
+    
     const oAuth2Client=new google.auth.OAuth2(CLIENT_ID, CLIENT_SERCRET, REDIRECT_URL)
 
     oAuth2Client.setCredentials({refresh_token: REFRESH_TOKEN})
@@ -80,7 +89,7 @@ const sendMail = (payload) =>{
                 service: "gmail",
                 auth: {
                     type: "OAuth2",
-                    user:"dseventos23@gmail.com",
+                    user:"vivas.ernesto@gmail.com",
                     clientId: CLIENT_ID,
                     clientSecret: CLIENT_SERCRET,
                     refreshToken: REFRESH_TOKEN,
@@ -140,9 +149,6 @@ const sendMail = (payload) =>{
         } catch (error) {
             console.log("Este es el error de mailhelper", error);
         }
-
-
-
 
      }
 

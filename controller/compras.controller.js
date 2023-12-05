@@ -71,7 +71,7 @@ const comprar = async (req, res) => {
         // boletas, name, email, phone, message,
 
         const payload = {
-            name: newCompra.nombre,
+            name: newCompra.nombre, 
             email: newCompra.email,
             publicacionId: newCompra.idPublicacion,
             boletas: newCompra.boletas,

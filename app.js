@@ -193,6 +193,7 @@ const PubliRoutes = require("./routes/publicacion.routes")
 const ComprasRoutes = require('./routes/compras.routes')
 const UploadsRoutes = require('./routes/uploads.routes')
 const AuthRoutes = require('./routes/auth.routes')
+const OpenRoutes = require('./routes/openPay.routes')
 // const mercadopago = require('mercadopago')
 
 
@@ -202,6 +203,7 @@ app.use("/api", PubliRoutes)
 app.use("/api", ComprasRoutes)
 app.use('/api/uploads', UploadsRoutes)
 app.use('/api/', AuthRoutes)
+app.use('/api/', OpenRoutes)
 
 
 
