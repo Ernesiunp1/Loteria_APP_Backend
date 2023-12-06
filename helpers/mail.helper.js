@@ -68,10 +68,10 @@ const sendMail = (payload) =>{
     // const REDIRECT_URL ="https://developers.google.com/oauthplayground"   
     // const REFRESH_TOKEN="1//04qg61yp1rpvbCgYIARAAGAQSNwF-L9Iro3QQx_aIzf57QuVJTn_PZFWGLDDq7Cht0RCj-i4LPfNSXvmVpI2PjBbS9DHdg44smDM"
    
-    const CLIENT_ID ="533437542492-cec47jqpe9fieeb4qi1h2blha665i4q4.apps.googleusercontent.com"
-    const CLIENT_SERCRET="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"
+    const CLIENT_ID ="642489572833-vdfce1j9ds4eegctel8abmcg1ffitt8l.apps.googleusercontent.com"
+    const CLIENT_SERCRET="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"
     const REDIRECT_URL ="https://developers.google.com/oauthplayground"   
-    const REFRESH_TOKEN="1//04sdoP6aKsutxCgYIARAAGAQSNwF-L9IrEctwuu1XFmG42qwP2d672zgWFvwVAfGr1M5317Zv1eSZwUYxwegNiZy8BI3OBH661ys"
+    const REFRESH_TOKEN="1//04tHQHcYa9LPhCgYIARAAGAQSNwF-L9IrfRWV4IMbcj1JZQGcvhJk_2h4ZUNtq3c_BW5M4xSENxLKRs6paW647y0COO4PAWmeWDk"
     
      
     
@@ -89,7 +89,7 @@ const sendMail = (payload) =>{
                 service: "gmail",
                 auth: {
                     type: "OAuth2",
-                    user:"vivas.ernesto@gmail.com",
+                    user:"dseventos2024@gmail.com",
                     clientId: CLIENT_ID,
                     clientSecret: CLIENT_SERCRET,
                     refreshToken: REFRESH_TOKEN,
