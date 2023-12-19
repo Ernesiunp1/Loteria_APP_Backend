@@ -54,8 +54,11 @@ const getPublicacion = async (req, res) => {
 };
 
 const getDetail = async (req, res) => {
- 
-    const id = req.params.id;
+
+
+//  todo: habilitar la constante de abajo (id) para que funcione denuevo 
+// const id = req.params.id;
+
 
   try {
     const publicacion = await Publicacion.findById(id).select(
