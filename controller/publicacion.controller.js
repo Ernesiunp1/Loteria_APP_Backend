@@ -56,8 +56,8 @@ const getPublicacion = async (req, res) => {
 const getDetail = async (req, res) => {
 
 
-//  todo: habilitar la constante de abajo (id) para que funcione denuevo 
-// const id = req.params.id;
+
+const id = req.params.id;
 
 
   try {
